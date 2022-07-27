@@ -1,51 +1,64 @@
-import { HamburgerIcon } from '@chakra-ui/icons';
+import { BellIcon, HamburgerIcon } from '@chakra-ui/icons';
 import {
+    Box,
     Button,
     ChakraProvider,
     Container,
     Flex,
     Hide,
     Image,
-    Link,
     Menu,
     MenuButton,
     MenuItem,
     MenuList,
     Show,
+    Link
 } from '@chakra-ui/react';
 import React from 'react';
-
+import { NavLink } from 'react-router-dom';
+import logo from './../images/logo.png'
 const Header = () => {
     return (
         <ChakraProvider>
             <Container maxW="container.xl">
-                <Flex justify="space-between" align="center">
-                    <Image boxSize="100px" height="auto" src="images/logo.png" />
-                    <Hide below='md'>
-                        <Flex gap="2">
-                            <Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
-                                Jobber
-                            </Link>
-                            <Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
-                                Meldingers
-                            </Link>
-                        </Flex>
-                    </Hide>
-                    <Show breakpoint='(max-width: 768px)'>
-                        <Menu>
-                            <MenuButton as={Button}>
-                                <HamburgerIcon />
-                            </MenuButton>
-                            <MenuList>
-                                <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
+                <Flex align="center" mt={2} bg='#ffffff' p={3}>
+                    <Image boxSize="80px" height="auto" src={logo} />
+                    <Flex justify="space-between" align="center" w='100%' ml={4}>
+                        <Hide below='md'>
+                            <Flex gap="3">
+                                <Link fontSize={18} as={NavLink} to="/dashboard" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
                                     Jobber
-                                </Link></MenuItem>
-                                <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
+                                </Link>
+                                <Link fontSize={18} as={NavLink} to="/" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
                                     Meldingers
-                                </Link></MenuItem>
-                            </MenuList>
-                        </Menu>
-                    </Show>
+                                </Link>
+                            </Flex>
+                        </Hide>
+                        <Show breakpoint='(max-width: 768px)'>
+                            <Menu>
+                                <MenuButton as={Button}>
+                                    <HamburgerIcon />
+                                </MenuButton>
+                                <MenuList>
+                                    <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
+                                        Jobber
+                                    </Link></MenuItem>
+                                    <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
+                                        Meldingers
+                                    </Link></MenuItem>
+                                </MenuList>
+                            </Menu>
+                        </Show>
+                        <Box as="div">
+                            <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" end>
+                                <Box as="span" fontSize={22} lineHeight='0'><BellIcon /></Box>
+                                <Box as='span' px={2} py={1} bg="gray.300" fontSize={13} fontWeight="700">12</Box>
+                            </Link>
+                            <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blue.500" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>
+                                Admin Name <Box as="span" ml={1}><i class="fas fa-angle-down"></i></Box>
+                            </Link>
+                        </Box>
+                    </Flex>
                 </Flex>
             </Container>
         </ChakraProvider>
