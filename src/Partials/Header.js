@@ -22,7 +22,7 @@ const Header = () => {
         <ChakraProvider>
             <Container maxW="container.xl">
                 <Flex align="center" mt={2} bg='#ffffff' p={3}>
-                    <Image boxSize="80px" height="auto" src={logo} />
+                    <Link as={NavLink} to="/"><Image boxSize="80px" height="auto" src={logo} /></Link>
                     <Flex justify="space-between" align="center" w='100%' ml={4}>
                         <Hide below='md'>
                             <Flex gap="3">

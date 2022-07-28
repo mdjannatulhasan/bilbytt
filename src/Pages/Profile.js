@@ -1,10 +1,22 @@
+import { Box, Flex, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import React from 'react';
 
 const Profile = () => {
     return (
-        <div>
-            Profile
-        </div>
+        <Box>
+            <Flex>
+                <Box>
+                    <Menu isLazy>
+                        <MenuButton>Open menu</MenuButton>
+                        <MenuList>
+                            <MenuItem>New Window</MenuItem>
+                            <MenuItem>Open Closed Tab</MenuItem>
+                            <MenuItem>Open File</MenuItem>
+                        </MenuList>
+                    </Menu>
+                </Box>
+            </Flex>
+        </Box>
     );
 };
 

@@ -10,7 +10,7 @@ const Dashboard = () => {
                 <GridItem colSpan={2} bg="#ffffff" p={3}>
                     <SideNav></SideNav>
                 </GridItem>
-                <GridItem colSpan={6} bg="#ffffff" p={4}>
+                <GridItem colSpan={6} bg="#ffffff">
                     <Outlet />
                 </GridItem>
             </Grid>
