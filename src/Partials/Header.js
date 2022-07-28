@@ -20,7 +20,7 @@ import logo from './../images/logo.png'
 const Header = () => {
     return (
         <ChakraProvider>
-            <Container maxW="container.xl">
+            <Container maxW="1450px">
                 <Flex align="center" mt={2} bg='#ffffff' p={3}>
                     <Link as={NavLink} to="/"><Image boxSize="80px" height="auto" src={logo} /></Link>
                     <Flex justify="space-between" align="center" w='100%' ml={4}>
@@ -55,7 +55,7 @@ const Header = () => {
                                 <Box as='span' px={2} py={1} bg="gray.300" fontSize={13} fontWeight="700">12</Box>
                             </Link>
                             <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blue.500" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>
-                                Admin Name <Box as="span" ml={1}><i class="fas fa-angle-down"></i></Box>
+                                Admin Name <Box as="span" ml={1}><i className="fas fa-angle-down"></i></Box>
                             </Link>
                         </Box>
                     </Flex>
