@@ -29,7 +29,7 @@ const Header = () => {
                                 <Link fontSize={18} as={NavLink} to="/dashboard" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
                                     Jobber
                                 </Link>
-                                <Link fontSize={18} as={NavLink} to="/" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
+                                <Link fontSize={18} as={NavLink} to="/message" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
                                     Meldingers
                                 </Link>
                             </Flex>

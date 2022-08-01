@@ -38,7 +38,7 @@ const SideNav = () => {
                             <Badge fontWeight="600">46</Badge>
                         </Flex>
                     </Link>
-                    <Link as={NavLink} to="/dashboard/offers" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blackAlpha.700" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4}>
+                    <Link as={NavLink} to="/dashboard/proposals" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blackAlpha.700" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4}>
                         <Flex justify="space-between" align="center">
                             <Box as="div">
                                 <Box as="span" mr={2}><i className="fa fa-envelope"></i></Box> <Show breakpoint='(min-width: 768px)'>Offers Received</Show>
@@ -46,7 +46,7 @@ const SideNav = () => {
                             <Badge fontWeight="600">4</Badge>
                         </Flex>
                     </Link>
-                    <Link as={NavLink} to="/dashboard/message" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blackAlpha.700" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4}>
+                    <Link as={NavLink} to="/message" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blackAlpha.700" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4}>
                         <Flex justify="space-between" align="center">
                             <Box as="div">
                                 <Box as="span" mr={2}><i className="fas fa-comments"></i></Box> <Show breakpoint='(min-width: 768px)'>My Messages</Show>

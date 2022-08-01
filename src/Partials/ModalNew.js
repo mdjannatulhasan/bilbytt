@@ -1,30 +1,67 @@
-import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text } from '@chakra-ui/react';
+import { LockIcon } from '@chakra-ui/icons';
+import { Box, Button, Flex, Grid, GridItem, HStack, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, Link } from '@chakra-ui/react';
 import React from 'react';
+import { Link as reactLink } from 'react-router-dom';
 
 const ModalNew = (props) => {
-    const { isOpen, onClose, onOpen } = props;
-    console.log('gello')
+    const { isOpen, onClose, onOpen, data } = props;
 
     return (
-        <Modal isOpen={isOpen} onClose={onClose}>
+        <Modal size="xl" isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
+                <ModalHeader>
+                    <Box fontSize={13} fontWeight="500" color="gray.500">
+                        #{data.id}
+                    </Box>
+                    {data.title}
+                    <Flex justify="space-between" fontSize={16} fontWeight="500" color="gray.500">
+                        <Box as="span">{data?.location?.zip} {data?.location?.city}, {data?.location?.state} </Box>
+                        <Box as="span" ml={2}>{data.createdAt}</Box>
+                    </Flex>
+                </ModalHeader>
                 <ModalCloseButton />
-                <ModalBody>
-                    <Text>
-                        Sit nulla est ex deserunt exercitation anim occaecat. Nostrud ullamco deserunt aute id consequat veniam incididunt duis in sint irure nisi. Mollit officia cillum Lorem ullamco minim nostrud elit officia tempor esse quis.
-                        <br />
 
-                        Sunt ad dolore quis aute consequat. Magna exercitation reprehenderit magna aute tempor cupidatat consequat elit dolor adipisicing. Mollit dolor eiusmod sunt ex incididunt cillum quis. Velit duis sit officia eiusmod Lorem aliqua enim laboris do dolor eiusmod. Et mollit incididunt nisi consectetur esse laborum eiusmod pariatur proident Lorem eiusmod et. Culpa deserunt nostrud ad veniam.
-                    </Text>
+                <ModalBody>
+                    <Tabs>
+                        <TabList>
+                            <Tab>Beskrivelse</Tab>
+                            <Tab isDisabled _disabled={{ color: "gray.600" }}><LockIcon mr={2} /> Knotaktinfo</Tab>
+                        </TabList>
+
+                        <TabPanels>
+                            <TabPanel>
+                                <Grid gap={2} templateColumns={{ lg: "repeat(6,1fr)" }}>
+                                    <GridItem colSpan={4}>
+                                        <Text>
+                                            {data.body}
+                                        </Text>
+                                    </GridItem>
+                                    <GridItem colSpan={2}>
+                                        <Image objectFit="cover" boxSize="160px" height="170px" src={data?.image} />
+                                    </GridItem>
+                                </Grid>
+                            </TabPanel>
+                            <TabPanel>
+                                <p>two!</p>
+                            </TabPanel>
+                        </TabPanels>
+                    </Tabs>
+
                 </ModalBody>
 
                 <ModalFooter>
-                    <Button colorScheme='blue' mr={3} onClick={onClose}>
-                        Close
-                    </Button>
-                    <Button variant='ghost'>Secondary Action</Button>
+                    <Flex justify="space-between" align="center" w="100%">
+                        <Box fontSize={13} fontWeight="500" color="gray.500">
+                            <Link as={reactLink} to="">Rapporter</Link>
+                        </Box>
+                        <HStack>
+                            <Button variant='ghost' mr={3} onClick={onClose}>
+                                Close
+                            </Button>
+                            <Button colorScheme='blue' >Send Proposal</Button>
+                        </HStack>
+                    </Flex>
                 </ModalFooter>
             </ModalContent>
         </Modal>
