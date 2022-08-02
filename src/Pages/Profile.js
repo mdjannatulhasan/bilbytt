@@ -8,6 +8,7 @@ const Profile = () => {
         { value: "audi", label: "Audi" },
         { value: "bmw", label: "BMW" },
         { value: "dacia", label: "Dacia" },
+        { value: "dacia", label: "Dacia" },
     ]
     const gender = [
         { value: "male", label: "Male" },
