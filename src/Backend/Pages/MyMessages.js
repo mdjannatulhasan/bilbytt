@@ -1,7 +1,6 @@
-import { Badge, Box, Button, Container, Flex, Grid, GridItem, HStack, Image, Text } from '@chakra-ui/react';
+import { Box, Container, Flex, Grid, GridItem, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import SideNav from '../../Partials/SideNav';
 
 const MyMessages = () => {
     return (
