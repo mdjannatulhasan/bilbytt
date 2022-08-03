@@ -49,10 +49,18 @@ const Header = () => {
                         </Menu>
                     </Show>
                     <Flex w='100%' justify="flex-end" align="center" gap={8}>
-                        <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" end>
-                            <Box as="span" fontSize={22} lineHeight='0'><BellIcon /></Box>
-                            <Box as='span' px={2} py={1} bg="gray.300" fontSize={13} fontWeight="700">12</Box>
-                        </Link>
+                        <Menu>
+                            <MenuButton fontWeight={600}>
+                                <Flex align="center">
+                                    <Box as="span" fontSize={22} lineHeight='0'><BellIcon /></Box>
+                                    <Box as='span' px={2} py={1} bg="gray.300" fontSize={13} fontWeight="700">12</Box>
+                                </Flex>
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="gray.600" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Notification 1</MenuItem>
+                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="gray.600" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Notification 2</MenuItem>
+                            </MenuList>
+                        </Menu>
                         <Menu>
                             <MenuButton fontWeight={600}>
                                 <Flex align="center">
@@ -60,7 +68,7 @@ const Header = () => {
                                 </Flex>
                             </MenuButton>
                             <MenuList>
-                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blue.500" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Download</MenuItem>
+                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="gray.600" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Download</MenuItem>
                             </MenuList>
                         </Menu>
                     </Flex>
