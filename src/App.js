@@ -2,10 +2,8 @@ import React from 'react';
 import {
     ChakraProvider,
 } from '@chakra-ui/react';
-import Header from './Backend/Partials/Header';
 import theme from './Styles/theme';
 import { Route, Routes } from 'react-router-dom';
-import Home from './Backend/Pages/Home';
 import "./Styles/App.css"
 import Profile from './Backend/Pages/Profile';
 import Listing from './Backend/Pages/Listing';
