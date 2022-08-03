@@ -21,13 +21,14 @@ function App() {
             <ChakraProvider theme={theme}>
                 <Routes>
                     <Route path='/' element={<Dashboard></Dashboard>}></Route>
-                    <Route path='/message' element={<MyMessages></MyMessages>}>
-                        <Route path=':userName' element={<SingleChatbox></SingleChatbox>}></Route>
-                    </Route>
+
                     <Route path='/dashboard' element={<Dashboard></Dashboard>}>
                         <Route path='/dashboard/' element={<Profile></Profile>}></Route>
                         <Route path='listing' element={<Listing></Listing>}></Route>
                         <Route path='proposals' element={<Proposals></Proposals>}></Route>
+                        <Route path='message' element={<MyMessages></MyMessages>}>
+                            <Route path=':userName' element={<SingleChatbox></SingleChatbox>}></Route>
+                        </Route>
                     </Route>
 
                 </Routes>

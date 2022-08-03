@@ -1,5 +1,5 @@
 import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
-import { Badge, Box, Button, Checkbox, Flex, Grid, GridItem, Heading, HStack, Image, Input, InputGroup, InputLeftAddon, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Stack, Text, useDisclosure } from '@chakra-ui/react';
+import { Badge, Box, Button, Checkbox, Flex, Grid, GridItem, Heading, HStack, Image, Input, InputGroup, InputLeftAddon, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -42,25 +42,29 @@ const Listing = () => {
                     </Menu>
                 </Box>
             </Flex>
-            <Grid templateColumns="repeat(10, 1fr)" gap={6} mt={3}>
+            <Grid templateColumns="repeat(10, 1fr)" gap={6} mt={4}>
                 <GridItem colSpan={7}>
-                    <Grid templateColumns={{ lg: "repeat(2, 1fr)" }} gap={3}>
+                    <Grid templateColumns={{ lg: "repeat(2, 1fr)" }} gap={4}>
                         {
                             dataCar?.data.map((data) =>
-                                <GridItem bg="#ffffff" position='relative'>
+                                <GridItem bg="#ffffff" position='relative' borderRadius={5} overflow="inherit">
+                                    {data.recommended && <p class="ribbon">
+                                        <Box as="span" className="text" fontSize={14}><strong class="bold">Recommended</strong></Box>
+                                    </p>}
                                     <FavouriteIcon />
                                     <Box as={Flex} colSpan={2} gap={3} flexDirection={{ sm: "column", lg: 'row' }} justifyContent={{ lg: "flex-end" }} onClick={() => modalTrigger(data)} cursor="pointer">
-                                        <Image objectFit="cover" boxSize="100%" height="170px" src='https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8&w=1000&q=80' />
+                                        <Image objectFit="cover" borderTopRadius={5} boxSize="100%" height="200px" src='https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8&w=1000&q=80' />
                                     </Box>
-                                    <Box fontWeight={600} px={3} py={2} mt={2} onClick={() => modalTrigger(data)} cursor="pointer" >
-                                        {data.recommended && <Badge mb={1} bg="orange.200">Recommended</Badge>}
-                                        <Box colSpan={5}>
+                                    <Box fontWeight={500} px={3} py={2} mt={2} onClick={() => modalTrigger(data)} cursor="pointer" >
+                                        <VStack spacing={1} align="flex-start">
+                                            <Badge fontSize={11}>{data?.location?.zip} {data?.location?.state}</Badge>
                                             <Text textTransform="capitalize">{data.title}</Text>
-                                            <Box mt={2}>
-                                                <Box as="span">0490 Oslo</Box>
-                                                <Box as="span"></Box>
-                                            </Box>
-                                        </Box>
+                                        </VStack>
+                                        <HStack justify="space-between" mt={2}>
+                                            <Text><i class="far fa-calendar-alt"></i> {data?.year}</Text>
+                                            <Text><i class="fas fa-road"></i> {data?.totalTraveled}</Text>
+                                            <Text><i class="fas fa-dollar-sign"></i> {data?.price}</Text>
+                                        </HStack>
                                     </Box>
 
                                 </GridItem>
