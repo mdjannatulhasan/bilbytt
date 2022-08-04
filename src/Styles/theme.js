@@ -19,7 +19,6 @@ const theme = extendTheme({
     },
     sizes: {
         container: {
-            xl: "1450px",
             '2xl': '1450px'
         }
     },

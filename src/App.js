@@ -12,20 +12,21 @@ import Proposals from './Backend/Pages/Proposals';
 import MyMessages from './Backend/Pages/MyMessages';
 import SingleChatbox from './Backend/Pages/SingleChatbox';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Home from './Frontend/Pages/Home/Home';
 function App() {
     const queryClient = new QueryClient();
     return (
         <QueryClientProvider client={queryClient}>
             <ChakraProvider theme={theme}>
                 <Routes>
-                    <Route path='/' element={<Dashboard></Dashboard>}></Route>
+                    <Route path='/' element={<Home></Home>}></Route>
 
                     <Route path='/dashboard' element={<Dashboard></Dashboard>}>
                         <Route path='/dashboard/' element={<Profile></Profile>}></Route>
                         <Route path='listing' element={<Listing></Listing>}></Route>
                         <Route path='proposals' element={<Proposals></Proposals>}></Route>
-                        <Route path='message' element={<MyMessages></MyMessages>}>
-                            <Route path=':userName' element={<SingleChatbox></SingleChatbox>}></Route>
+                        <Route path='/dashboard/message' element={<MyMessages></MyMessages>}>
+                            <Route path='/dashboard/message/:userName' element={<SingleChatbox></SingleChatbox>}></Route>
                         </Route>
                     </Route>
 

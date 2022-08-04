@@ -1,4 +1,4 @@
-import { BellIcon, HamburgerIcon } from '@chakra-ui/icons';
+import { AddIcon, BellIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from '@chakra-ui/icons';
 import {
     Box,
     Button,
@@ -12,17 +12,18 @@ import {
     MenuItem,
     MenuList,
     Show,
-    Link
+    Link,
+    IconButton,
+    HStack
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from './../images/logo.png'
-const Header = () => {
+import logo from './../../images/logo.png'
+const Header = ({ bgColor }) => {
     return (
-        <ChakraProvider>
-            <Container maxW="1450px">
-                <Flex align="center" mt={2} bg='#ffffff' p={3}>
-                    <Link as={NavLink} to="/"><Image boxSize="80px" height="auto" src={logo} /></Link>
+        <Box as='section' bg={bgColor}>
+            <Container maxW="container.xl">
+                <Flex align="center" py='2'>
                     <Flex justify="space-between" align="center" w='100%' ml={4}>
                         <Hide below='md'>
                             <Flex gap="3">
@@ -36,32 +37,60 @@ const Header = () => {
                         </Hide>
                         <Show breakpoint='(max-width: 768px)'>
                             <Menu>
-                                <MenuButton as={Button}>
-                                    <HamburgerIcon />
-                                </MenuButton>
+                                <MenuButton
+                                    as={IconButton}
+                                    aria-label='Options'
+                                    icon={<HamburgerIcon />}
+                                    variant='outline'
+                                />
                                 <MenuList>
-                                    <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
-                                        Jobber
-                                    </Link></MenuItem>
-                                    <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
-                                        Meldingers
-                                    </Link></MenuItem>
+                                    <MenuItem icon={<AddIcon />} command='⌘T'>
+                                        New Tab
+                                    </MenuItem>
+                                    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
+                                        New Window
+                                    </MenuItem>
+                                    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
+                                        Open Closed Tab
+                                    </MenuItem>
+                                    <MenuItem icon={<EditIcon />} command='⌘O'>
+                                        Open File...
+                                    </MenuItem>
                                 </MenuList>
                             </Menu>
                         </Show>
-                        <Box as="div">
-                            <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" end>
-                                <Box as="span" fontSize={22} lineHeight='0'><BellIcon /></Box>
-                                <Box as='span' px={2} py={1} bg="gray.300" fontSize={13} fontWeight="700">12</Box>
+                        <Link as={NavLink} to="/"><Image boxSize="80px" height="auto" src={logo} /></Link>
+                        <HStack spacing={5}>
+                            <Link fontSize={18} as={NavLink} to="/message" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
+                                <i className='fa fa-user'></i> <Box as="span" ml={2}>Login</Box>
                             </Link>
-                            <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blue.500" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>
-                                Admin Name <Box as="span" ml={1}><i className="fas fa-angle-down"></i></Box>
-                            </Link>
-                        </Box>
+                            <Menu>
+                                <MenuButton
+                                    as={IconButton}
+                                    aria-label='Options'
+                                    icon={<HamburgerIcon />}
+                                    variant='outline'
+                                />
+                                <MenuList>
+                                    <MenuItem icon={<AddIcon />} command='⌘T'>
+                                        New Tab
+                                    </MenuItem>
+                                    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
+                                        New Window
+                                    </MenuItem>
+                                    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
+                                        Open Closed Tab
+                                    </MenuItem>
+                                    <MenuItem icon={<EditIcon />} command='⌘O'>
+                                        Open File...
+                                    </MenuItem>
+                                </MenuList>
+                            </Menu>
+                        </HStack>
                     </Flex>
                 </Flex>
             </Container>
-        </ChakraProvider>
+        </Box>
     );
 };
 

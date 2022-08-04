@@ -22,7 +22,6 @@ const Header = () => {
     return (
         <ChakraProvider>
             <Flex align="center" mb={2} p={3} w="100%">
-
                 <Flex justify="space-between" align="center" ml={4} w="100%">
                     <Hide below='md'>
                         <InputGroup borderColor="transparent">
