@@ -1,16 +1,8 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
 import {
     Box,
-    Button,
     ChakraProvider,
-    Container,
     Flex,
-    Hide,
-    Image,
-    Menu,
-    MenuButton,
-    MenuItem,
-    MenuList,
     Show,
     Link,
     Badge

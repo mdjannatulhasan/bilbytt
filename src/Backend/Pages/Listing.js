@@ -1,5 +1,5 @@
 import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
-import { Badge, Box, Button, Checkbox, Flex, Grid, GridItem, Heading, HStack, Image, Input, InputGroup, InputLeftAddon, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Button, Checkbox, Flex, Grid, GridItem, Heading, HStack, Image, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useState } from 'react';
@@ -42,8 +42,40 @@ const Listing = () => {
                     </Menu>
                 </Box>
             </Flex>
-            <Grid templateColumns="repeat(10, 1fr)" gap={6} mt={4}>
-                <GridItem colSpan={7}>
+            <Grid templateColumns={{ sm: 'repeat(1, 1fr)', lg: "repeat(10, 1fr)" }} gap={6} mt={4}>
+                <GridItem display={{ sm: 'flex', lg: 'none' }} width='100%'>
+                    <Accordion allowToggle width='100%'>
+                        <AccordionItem>
+                            <h2>
+                                <AccordionButton>
+                                    <Box flex='1' textAlign='left'>
+                                        <i class="fas fa-sliders-h"></i> <Box as='span' ml={2}>Filters</Box>
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                            </h2>
+                            <AccordionPanel pb={4}>
+                                <InputGroup>
+                                    <InputLeftElement
+                                        pointerEvents='none'
+                                        children={<SearchIcon color='gray.400' />}
+                                    />
+                                    <Input type='tel' placeholder='Search in car' />
+                                </InputGroup>
+                                <Stack spacing={1} mt={3}>
+                                    <Heading as={'h4'} fontSize={18}>Brands</Heading>
+                                    {
+                                        carBrandNames?.data?.brandList.map((brand) =>
+                                            <CustomCheckbox textInput={brand.brand} models={brand?.models} />
+                                        )
+                                    }
+
+                                </Stack>
+                            </AccordionPanel>
+                        </AccordionItem>
+                    </Accordion>
+                </GridItem>
+                <GridItem colSpan={{ lg: 7 }}>
                     <Grid templateColumns={{ lg: "repeat(2, 1fr)" }} gap={4}>
                         {
                             dataCar?.data.map((data) =>
@@ -72,7 +104,7 @@ const Listing = () => {
                         }
                     </Grid>
                 </GridItem>
-                <GridItem colSpan={3}>
+                <GridItem colSpan={3} display={{ sm: 'none', lg: 'block' }}>
                     <InputGroup>
                         <InputLeftElement
                             pointerEvents='none'
@@ -91,6 +123,7 @@ const Listing = () => {
                     </Stack>
 
                 </GridItem>
+
             </Grid>
             <HStack gap={4} m={2}>
                 <Button

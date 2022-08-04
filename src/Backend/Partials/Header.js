@@ -14,10 +14,13 @@ import {
     InputGroup,
     InputLeftElement,
     Input,
-    Image
+    Image,
+    Text
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from './../../images/logo1.png';
+
 const Header = () => {
     return (
         <ChakraProvider>
@@ -33,21 +36,15 @@ const Header = () => {
                         </InputGroup>
                     </Hide>
                     <Show breakpoint='(max-width: 768px)'>
-                        <Menu>
-                            <MenuButton as={Button}>
-                                <HamburgerIcon />
-                            </MenuButton>
-                            <MenuList>
-                                <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
-                                    Jobber
-                                </Link></MenuItem>
-                                <MenuItem><Link _hover={{ textDecoration: 'none', color: 'blue', }} fontWeight="500">
-                                    Meldingers
-                                </Link></MenuItem>
-                            </MenuList>
-                        </Menu>
+                        <Link as={NavLink} to="/" display="block" _hover={{ textDecoration: "none" }}>
+                            <Flex align="center" justify="center" fontSize={22} className="logo" fontWeight={700} w="100%">
+                                <Image boxSize="60px" height="auto" src={logo} />
+                                <Text color="#ABCDF7" ml={2}>bil</Text>
+                                <Text color="#4682E0">bytt</Text>
+                            </Flex>
+                        </Link>
                     </Show>
-                    <Flex w='100%' justify="flex-end" align="center" gap={8}>
+                    <Flex w='100%' justify="flex-end" align="center" gap={{ sm: 5, lg: 8 }}>
                         <Menu>
                             <MenuButton fontWeight={600}>
                                 <Flex align="center">
@@ -63,7 +60,9 @@ const Header = () => {
                         <Menu>
                             <MenuButton fontWeight={600}>
                                 <Flex align="center">
-                                    <Image src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' boxSize='40px' objectFit="cover" objectPosition='top' borderRadius={900} mr={2}></Image> Admin Name <ChevronDownIcon />
+                                    <Image src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' boxSize='40px' objectFit="cover" objectPosition='top' borderRadius={900} mr={2}></Image> <Box as='span' display={{ sm: 'none', lg: 'inline-block' }}>Admin Name <ChevronDownIcon /></Box>
+                                    <HamburgerIcon display={{ lg: 'none' }} />
+
                                 </Flex>
                             </MenuButton>
                             <MenuList>
