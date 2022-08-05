@@ -18,11 +18,11 @@ const FourthSection = () => {
                             </Box>
 
                             <VStack spacing={4} alignItems='flex-start'>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Flere bilforhandlere konkurrerer om deg</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Konkurransedyktig tilbud</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Kun én forhandler gir bud på bilen din</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må selv få oversikt over markedet</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Ingen konkurransedyktig tilbud</Box>
                                 <Box><CheckCircleIcon color='brand.200' mr={2} /> Innbytte i løpet av 1 - 2 virkedager</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du har ingen reklamasjonsplikt</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Vi ordner alt for deg</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Ingen reklamasjonsplikt i etterkant</Box>
                             </VStack>
                         </VStack>
                     </GridItem>
@@ -49,11 +49,11 @@ const FourthSection = () => {
                             </Box>
 
                             <VStack spacing={4} alignItems='flex-start'>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Flere bilforhandlere konkurrerer om deg</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Konkurransedyktig tilbud</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Innbytte i løpet av 1 - 2 virkedager</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du har ingen reklamasjonsplikt</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Vi ordner alt for deg</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må først selge og så kjøpe en ny bil</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må selv få oversikt over markedet</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Prosessen tar i snitt 30 - 60 dager</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du sitter selv igjen med 2 års reklamasjon</Box>
+                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må ordne alt selv</Box>
                             </VStack>
                         </VStack>
                     </GridItem>
