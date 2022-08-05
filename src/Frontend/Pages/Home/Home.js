@@ -12,7 +12,7 @@ import ThirdSection from './ThirdSection';
 const Home = () => {
     return (
         <>
-            <Header bgColor='#F3F2F8' />
+            <Header bgColor='#F2F6FE' />
             <Hero></Hero>
             <ServiceSection></ServiceSection>
             <ThirdSection></ThirdSection>

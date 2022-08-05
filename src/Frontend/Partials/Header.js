@@ -1,8 +1,6 @@
-import { AddIcon, BellIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from '@chakra-ui/icons';
+import { AddIcon, EditIcon, ExternalLinkIcon, HamburgerIcon, RepeatIcon } from '@chakra-ui/icons';
 import {
     Box,
-    Button,
-    ChakraProvider,
     Container,
     Flex,
     Hide,
@@ -24,7 +22,7 @@ const Header = ({ bgColor }) => {
         <Box as='section' bg={bgColor}>
             <Container maxW="container.xl">
                 <Flex align="center" py='2'>
-                    <Flex justify="space-between" align="center" w='100%' ml={4}>
+                    <Flex justify="space-between" align="center" w='100%' ml={4} zIndex={10}>
                         <Hide below='md'>
                             <Flex gap="3">
                                 <Link fontSize={18} as={NavLink} to="/dashboard" _hover={{ textDecoration: 'none', color: '#5890ED', }} fontWeight="500" _activeLink={{ color: '#5890ED' }}>
@@ -71,19 +69,8 @@ const Header = ({ bgColor }) => {
                                     icon={<HamburgerIcon />}
                                     variant='outline'
                                 />
-                                <MenuList>
-                                    <MenuItem icon={<AddIcon />} command='⌘T'>
-                                        New Tab
-                                    </MenuItem>
-                                    <MenuItem icon={<ExternalLinkIcon />} command='⌘N'>
-                                        New Window
-                                    </MenuItem>
-                                    <MenuItem icon={<RepeatIcon />} command='⌘⇧N'>
-                                        Open Closed Tab
-                                    </MenuItem>
-                                    <MenuItem icon={<EditIcon />} command='⌘O'>
-                                        Open File...
-                                    </MenuItem>
+                                <MenuList py={2} px={3}>
+                                    <Link as={NavLink} to="/dashboard">Dashboard</Link>
                                 </MenuList>
                             </Menu>
                         </HStack>

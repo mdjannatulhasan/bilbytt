@@ -3,7 +3,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <Box as='footer' pt={12} pb={8} bg="#F3F2F8">
+        <Box as='footer' pt={12} pb={8} bg="#F2F6FE">
             <Container maxW='container.xl'>
                 Footer goes here
             </Container>

@@ -3,7 +3,7 @@ import React from 'react';
 
 const FourthSection = () => {
     return (
-        <Box as='section' py={16} bg="#F3F2F8">
+        <Box as='section' py={16} bg="#F2F6FE">
             <Container maxW='container.xl'>
                 <VStack spacing={5} alignItems='flex-start'>
                     <Heading fontSize={42}>5 tips til deg som drømmer om båt!</Heading>
