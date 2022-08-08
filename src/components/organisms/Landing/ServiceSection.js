@@ -8,31 +8,24 @@ import exchangeImg from './../../../images/exchange.png';
 import Card from '../../molecules/Landing/LandingCard';
 
 const ServiceSection = () => {
+    const services = [
+        { imgSrc: registrationImg, title: '1. REGISTRENING', text: 'Registrer bilen din, samt ønske av innbyttebiler. Bilbytt legger frem dine ønsker til våre samarbeidspartnere gjennom en budrunde.' },
+        { imgSrc: offerSelectImg, title: '2. VELG TILBUD', text: 'Når budrunden er over, kontakter en av våre kunderådgivere deg med de beste tilbudene. Du velger den bilen som passer deg best.' },
+        { imgSrc: exchangeImg, title: '1. REGISTRENING', text: 'Når du har valgt den innbyttebilen du ønsker å gå for, etablerer vi kontakt mellom deg og forhandleren som vant budrunden. Da er alt klart for å bytte bil.' },
+    ]
     return (
         <Box as="section" py={16}>
             <Container maxW='container.xl'>
                 <Grid templateColumns={{ lg: 'repeat(3,1fr)' }} gap={6}>
-                    <GridItem textAlign='center'>
-                        <Card imgSrc={registrationImg}
-                            title='1. REGISTRENING'
-                            text='Registrer bilen din, samt ønske av innbyttebiler. Bilbytt legger frem dine ønsker til våre samarbeidspartnere gjennom en budrunde.'
-                            link={{ text: 'Les Mer om oss', url: '' }}
-                        ></Card>
-                    </GridItem>
-                    <GridItem textAlign='center'>
-                        <Card imgSrc={offerSelectImg}
-                            title='2. VELG TILBUD'
-                            text='Når budrunden er over, kontakter en av våre kunderådgivere deg med de beste tilbudene. Du velger den bilen som passer deg best.'
-                            link={{ text: 'Les Mer om oss', url: '' }}
-                        ></Card>
-                    </GridItem>
-                    <GridItem textAlign='center'>
-                        <Card imgSrc={exchangeImg}
-                            title='1. REGISTRENING'
-                            text='Når du har valgt den innbyttebilen du ønsker å gå for, etablerer vi kontakt mellom deg og forhandleren som vant budrunden. Da er alt klart for å bytte bil.'
-                            link={{ text: 'Les Mer om oss', url: '' }}
-                        ></Card>
-                    </GridItem>
+                    {services.map(({ imgSrc, title, text }) =>
+                        <GridItem textAlign='center'>
+                            <Card imgSrc={imgSrc}
+                                title={title}
+                                text={text}
+                                link={{ text: 'Les Mer om oss', url: '' }}
+                            ></Card>
+                        </GridItem>
+                    )}
                 </Grid>
             </Container>
         </Box >

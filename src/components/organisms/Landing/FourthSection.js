@@ -2,6 +2,9 @@ import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Box, Container, Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import SecTitle from '../../atoms/SecTitle';
+import ListItemWithIcon from '../../molecules/Landing/ListItemWithIcon';
+import ListWithImageAtTop from '../../molecules/Landing/ListWithImageAtTop';
+import ListWithTitleAtTop from '../../molecules/Landing/ListWithTitleAtTop';
 import logo from './../../../images/logoL.png';
 
 const FourthSection = () => {
@@ -11,51 +14,43 @@ const FourthSection = () => {
                 <SecTitle textAlign='center' mb={10}>Hvorfor innbytte gjennom bilbytt?</SecTitle>
                 <Grid templateColumns={{ lg: 'repeat(3,1fr)' }} gap={6} alignItems="center">
                     <GridItem textAlign='center' bg='rgba(255, 255, 255, 0.66)' px={6} py={10} borderRadius={20}>
-                        <VStack spacing={5} alignItems='flex-start'>
-                            <Box textAlign='left'>
-                                <Text fontSize={20} fontWeight={600}>Innbytte</Text>
-                                <Text pb={5}>Få mest mulig for bilen din ved innbytte</Text>
-                            </Box>
-
-                            <VStack spacing={4} alignItems='flex-start'>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Kun én forhandler gir bud på bilen din</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må selv få oversikt over markedet</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Ingen konkurransedyktig tilbud</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Innbytte i løpet av 1 - 2 virkedager</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Ingen reklamasjonsplikt i etterkant</Box>
-                            </VStack>
-                        </VStack>
+                        <ListWithTitleAtTop
+                            title="Innbytte"
+                            subTitle='Få mest mulig for bilen din ved innbytte'
+                            list={[
+                                'Kun én forhandler gir bud på bilen din',
+                                'Du må selv få oversikt over markedet',
+                                'Ingen konkurransedyktig tilbud',
+                                'Innbytte i løpet av 1 - 2 virkedager',
+                                'Ingen reklamasjonsplikt i etterkant',
+                            ]}
+                        />
                     </GridItem>
                     <GridItem textAlign='center' bg='white' px={6} py={10} borderRadius={20}>
-                        <VStack spacing={3}>
-                            <Box fontSize={46} position='relative' _after={{ bg: 'blue.100', content: '""', width: '85px', height: '85px', position: 'absolute', left: '10px', top: '10px', zIndex: -1, borderRadius: '200' }} color="blue.800"><Image height='80px' src={logo}></Image></Box>
-                            <Text pb={5} fontSize={18}>Få mest mulig for bilen din ved innbytte
-
-                            </Text>
-                            <VStack spacing={4} alignItems='flex-start' fontSize={17} fontWeight={600}>
-                                <Box><CheckCircleIcon color='brand.500' mr={2} /> Flere bilforhandlere konkurrerer om deg</Box>
-                                <Box><CheckCircleIcon color='brand.500' mr={2} /> Konkurransedyktig tilbud</Box>
-                                <Box><CheckCircleIcon color='brand.500' mr={2} /> Innbytte i løpet av 1 - 2 virkedager</Box>
-                                <Box><CheckCircleIcon color='brand.500' mr={2} /> Du har ingen reklamasjonsplikt</Box>
-                                <Box><CheckCircleIcon color='brand.500' mr={2} /> Vi ordner alt for deg</Box>
-                            </VStack>
-                        </VStack>
+                        <ListWithImageAtTop
+                            imgSrc={logo}
+                            subTitle='Få mest mulig for bilen din ved innbytte'
+                            list={[
+                                'Flere bilforhandlere konkurrerer om deg',
+                                'Konkurransedyktig tilbud',
+                                'Innbytte i løpet av 1 - 2 virkedager',
+                                'Du har ingen reklamasjonsplikt',
+                                'Vi ordner alt for deg',
+                            ]}
+                        />
                     </GridItem>
                     <GridItem textAlign='center' bg='rgba(255, 255, 255, 0.66)' px={6} py={10} borderRadius={20}>
-                        <VStack spacing={5} alignItems='flex-start'>
-                            <Box textAlign='left'>
-                                <Text fontSize={20} fontWeight={600}>Selge selv</Text>
-                                <Text pb={5}>for å bytte til en annen bil</Text>
-                            </Box>
-
-                            <VStack spacing={4} alignItems='flex-start'>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må først selge og så kjøpe en ny bil</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må selv få oversikt over markedet</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Prosessen tar i snitt 30 - 60 dager</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du sitter selv igjen med 2 års reklamasjon</Box>
-                                <Box><CheckCircleIcon color='brand.200' mr={2} /> Du må ordne alt selv</Box>
-                            </VStack>
-                        </VStack>
+                        <ListWithTitleAtTop
+                            title="Selge selv"
+                            subTitle='for å bytte til en annen bil'
+                            list={[
+                                'Du må først selge og så kjøpe en ny bil',
+                                'Du må selv få oversikt over markedet',
+                                'Prosessen tar i snitt 30 - 60 dager',
+                                'Du sitter selv igjen med 2 års reklamasjon',
+                                'Du må ordne alt selv',
+                            ]}
+                        />
                     </GridItem>
                 </Grid>
             </Container>
