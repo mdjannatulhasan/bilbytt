@@ -1,13 +1,11 @@
 import { Container, Grid, GridItem } from '@chakra-ui/react';
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import SideNav from '../Partials/SideNav';
-import theme from '../../Styles/theme';
-import Header from '../Partials/Header';
-import BottomNavbar from '../Partials/BottomNavbar';
+import SideNav from '../../components/organisms/common/dashboard/SideNav';
+import DashboardHeader from '../../components/organisms/common/dashboard/DashboardHeader';
+import BottomNavbar from '../../components/organisms/common/dashboard/BottomNavbar';
 
-const Dashboard = () => {
-    console.log(theme);
+const Index = () => {
     return (
         <>
             <Container maxW="container.2xl" mt={2} height="100%" pb={{ sm: '70px', lg: 0 }}>
@@ -16,7 +14,7 @@ const Dashboard = () => {
                         <SideNav></SideNav>
                     </GridItem>
                     <GridItem colSpan={8} >
-                        <Header></Header>
+                        <DashboardHeader></DashboardHeader>
                         <Outlet />
                     </GridItem>
                 </Grid>
@@ -24,6 +22,5 @@ const Dashboard = () => {
             <BottomNavbar></BottomNavbar>
         </>
     );
-};
-
-export default Dashboard;
+}
+export default Index;

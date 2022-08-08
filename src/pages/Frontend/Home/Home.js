@@ -1,7 +1,7 @@
 import { Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Image } from '@chakra-ui/react';
 import React from 'react';
-import Footer from '../../Partials/Footer';
-import Header from '../../Partials/Header';
+import Header from '../../../components/organisms/common/frontend/Header';
+import Footer from '../../../components/organisms/common/frontend/Footer';
 import FifthSection from './FifthSection';
 import FourthSection from './FourthSection';
 import Hero from './Hero';

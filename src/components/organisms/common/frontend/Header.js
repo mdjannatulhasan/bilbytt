@@ -16,7 +16,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from './../../images/logo.png'
+import logo from './../../../../images/logo.png'
 const Header = ({ bgColor }) => {
     return (
         <Box as='section' bg={bgColor}>

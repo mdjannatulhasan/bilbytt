@@ -3,9 +3,9 @@ import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPane
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useState } from 'react';
-import CustomCheckbox from '../Partials/CustomCheckbox';
-import FavouriteIcon from '../Partials/FavouriteIcon';
-import ModalNew from '../Partials/ModalNew';
+import CustomCheckbox from '../../components/organisms/listings/CustomCheckbox';
+import FavouriteIcon from '../../components/atoms/FavouriteIcon';
+import ModalNew from '../../components/organisms/listings/ModalNew';
 
 const Listing = () => {
     const [page, setPage] = useState(1)
@@ -152,3 +152,21 @@ const Listing = () => {
 };
 
 export default Listing;
+
+/*
+/components
+    /common
+    /listings
+        /molecules
+        /organisms
+    /profile
+        /molecules
+        /organisms
+/hooks
+/pages
+    /dashboard/listing.ts
+    index.ts
+/utils
+App.js
+index.js
+yee-zbnh-csp */

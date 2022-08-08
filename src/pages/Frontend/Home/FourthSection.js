@@ -1,7 +1,6 @@
-import { ArrowForwardIcon, CheckCircleIcon } from '@chakra-ui/icons';
-import { Box, Button, Center, Container, Grid, GridItem, Heading, Image, Link, Text, VStack } from '@chakra-ui/react';
+import { CheckCircleIcon } from '@chakra-ui/icons';
+import { Box, Container, Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
-import { Link as reactLink } from 'react-router-dom';
 import logo from './../../../images/logoL.png';
 
 const FourthSection = () => {

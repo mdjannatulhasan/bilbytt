@@ -5,14 +5,14 @@ import {
 import theme from './Styles/theme';
 import { Route, Routes } from 'react-router-dom';
 import "./Styles/App.css"
-import Profile from './Backend/Pages/Profile';
-import Listing from './Backend/Pages/Listing';
-import Dashboard from './Backend/Pages/Dashboard';
-import Proposals from './Backend/Pages/Proposals';
-import MyMessages from './Backend/Pages/MyMessages';
-import SingleChatbox from './Backend/Pages/SingleChatbox';
+import Profile from './pages/dashboard/Profile';
+import Listing from './pages/dashboard/Listing';
+import Dashboard from './pages/dashboard/Index';
+import Proposals from './pages/dashboard/Proposals';
+import MyMessages from './pages/dashboard/message/Index';
+import SingleChatbox from './pages/dashboard/message/SingleChatbox';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Home from './Frontend/Pages/Home/Home';
+import Home from './pages/Frontend/Home/Home';
 function App() {
     const queryClient = new QueryClient();
     return (
