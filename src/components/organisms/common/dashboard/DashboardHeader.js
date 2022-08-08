@@ -24,7 +24,7 @@ import logo from './../../../../images/logo1.png';
 
 const Header = () => {
     return (
-        <Container maxW='container.custom' bg='#ffffff'>
+        <Container maxW='container.custom' bg='#ffffff' w="100%" position='fixed' top='0' zIndex={60}>
             <Flex align="center" mb={2} p={3} w="100%">
                 <Flex justify="space-between" align="center" ml={4} w="100%">
                     <Hide below='md'>
