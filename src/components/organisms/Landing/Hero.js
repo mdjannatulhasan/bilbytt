@@ -1,5 +1,7 @@
 import { Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Image, Text } from '@chakra-ui/react';
 import React from 'react';
+import PrimaryButton from '../../atoms/PrimaryButton';
+import SectionBodyText from '../../atoms/SectionBodyText';
 import heroImg from './../../../images/hero-img.png'
 const Hero = () => {
     return (
@@ -13,11 +15,10 @@ const Hero = () => {
                         <Heading as="h2" my={4} fontSize={{ sm: '26', lg: '36' }} fontWeight={400}>
                             La forhandlere konkurrere om innbyttebilen din!
                         </Heading>
-                        <Text fontSize={19}>Bilbytt samarbeider med en rekke bilforhandlere og samler inn de beste innbyttetilbudene.
-                            Du velger det tilbudet som passer deg best. </Text>
+                        <SectionBodyText>Bilbytt samarbeider med en rekke bilforhandlere og samler inn de beste innbyttetilbudene.
+                            Du velger det tilbudet som passer deg best. </SectionBodyText>
                         <HStack mt={8} spacing={5}>
-                            <Button bg='brand.500' height='auto' border='1px solid' borderColor='brand.500' borderRadius={500} py={3} px={8} fontSize={18} color='white' _hover={{ color: 'brand.500', bg: 'transparent' }}>Få tilbud på innbytte
-                            </Button>
+                            <PrimaryButton>Få tilbud på innbytte</PrimaryButton>
                         </HStack>
                     </GridItem>
                     <GridItem>

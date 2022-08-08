@@ -5,7 +5,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import ModalNew from '../../components/organisms/listings/ModalNew';
 import CheckboxList from '../../components/organisms/listings/CheckboxList';
-import Card from '../../components/organisms/listings/Card';
+import Card from '../../components/molecules/listings/ListingCard';
 import Pagination from '../../components/organisms/listings/Pagination';
 
 const Listing = () => {

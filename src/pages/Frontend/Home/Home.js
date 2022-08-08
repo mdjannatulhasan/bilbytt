@@ -1,13 +1,12 @@
-import { Box, Button, Container, Flex, Grid, GridItem, Heading, HStack, Image } from '@chakra-ui/react';
 import React from 'react';
 import Header from '../../../components/organisms/common/frontend/Header';
 import Footer from '../../../components/organisms/common/frontend/Footer';
-import FifthSection from './FifthSection';
-import FourthSection from './FourthSection';
-import Hero from './Hero';
-import LastSection from './LastSection';
-import ServiceSection from './ServiceSection';
-import ThirdSection from './ThirdSection';
+import Hero from '../../../components/organisms/Landing/Hero';
+import ServiceSection from '../../../components/organisms/Landing/ServiceSection';
+import SectionWithLeftSIdeImage from '../../../components/organisms/Landing/SectionWithLeftSIdeImage';
+import FourthSection from '../../../components/organisms/Landing/FourthSection';
+import SectionWithRightSIdeImage from '../../../components/organisms/Landing/SectionWithRightSIdeImage';
+import LastSection from '../../../components/organisms/Landing/LastSection';
 
 const Home = () => {
     return (
@@ -15,9 +14,9 @@ const Home = () => {
             <Header bgColor='#F2F6FE' />
             <Hero></Hero>
             <ServiceSection></ServiceSection>
-            <ThirdSection></ThirdSection>
+            <SectionWithLeftSIdeImage></SectionWithLeftSIdeImage>
             <FourthSection></FourthSection>
-            <FifthSection></FifthSection>
+            <SectionWithRightSIdeImage></SectionWithRightSIdeImage>
             <LastSection></LastSection>
             <Footer></Footer>
         </>

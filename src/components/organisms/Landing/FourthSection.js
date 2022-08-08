@@ -1,13 +1,14 @@
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import { Box, Container, Grid, GridItem, Heading, Image, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
+import SecTitle from '../../atoms/SecTitle';
 import logo from './../../../images/logoL.png';
 
 const FourthSection = () => {
     return (
         <Box as='section' py={16} bg="#F2F6FE">
             <Container maxW='container.xl'>
-                <Heading fontSize={42} textAlign='center' mb={10}>Hvorfor innbytte gjennom bilbytt?</Heading>
+                <SecTitle textAlign='center' mb={10}>Hvorfor innbytte gjennom bilbytt?</SecTitle>
                 <Grid templateColumns={{ lg: 'repeat(3,1fr)' }} gap={6} alignItems="center">
                     <GridItem textAlign='center' bg='rgba(255, 255, 255, 0.66)' px={6} py={10} borderRadius={20}>
                         <VStack spacing={5} alignItems='flex-start'>
