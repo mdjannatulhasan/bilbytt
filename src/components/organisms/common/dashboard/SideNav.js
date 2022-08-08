@@ -5,7 +5,7 @@ import logo from './../../../../images/logo1.png';
 
 const SideNav = () => {
     return (
-        <Box>
+        <Box w='100%'>
             <Link as={NavLink} to="/" mb={5} display="block" _hover={{ textDecoration: "none" }}>
                 <Flex align="center" justify="center" fontSize={22} className="logo" fontWeight={700} w="100%">
                     <Image boxSize="70px" height="auto" src={logo} />
