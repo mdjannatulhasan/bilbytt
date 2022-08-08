@@ -4,7 +4,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const MyMessages = () => {
     return (
-        <Container maxW="container.2xl" mt={2} height="100%">
+        <Container maxW="container.custom" mt={2} height="100%">
             <Grid templateColumns="repeat(8, 1fr)" gap={2} height="100%">
                 <GridItem colSpan={2} bg="#ffffff" p={3}>
                     <Box as={NavLink} to="/dashboard/message/imranKhan" display="block" borderBottom="1px solid" borderColor="gray.300" px={4} py={3} _activeLink={{ backgroundColor: "gray.100" }}>

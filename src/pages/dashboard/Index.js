@@ -8,7 +8,7 @@ import BottomNavbar from '../../components/organisms/common/dashboard/BottomNavb
 const Index = () => {
     return (
         <>
-            <Container maxW="container.2xl" mt={2} height="100%" pb={{ sm: '70px', lg: 0 }}>
+            <Container maxW="container.custom" mt={2} height="100%" pb={{ sm: '70px', lg: 0 }}>
                 <Grid templateColumns={{ lg: "repeat(10, 1fr)" }} gap={2} height="100%">
                     <GridItem colSpan={2} p={3} display={{ sm: 'none', lg: 'flex' }}>
                         <SideNav></SideNav>

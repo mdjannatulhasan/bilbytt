@@ -19,7 +19,8 @@ const theme = extendTheme({
     },
     sizes: {
         container: {
-            '2xl': '1450px'
+            '2xl': '1450px',
+            'custom': '100%',
         }
     },
     styles: {

@@ -1,7 +1,5 @@
-import { ArrowForwardIcon } from '@chakra-ui/icons';
-import { Box, Container, Grid, GridItem, Heading, Text, VStack, Link, Image } from '@chakra-ui/react';
+import { Box, Container, Grid, GridItem } from '@chakra-ui/react';
 import React from 'react';
-import { Link as reactLink } from 'react-router-dom';
 import registrationImg from './../../../images/registration.png';
 import offerSelectImg from './../../../images/select-offer.png';
 import exchangeImg from './../../../images/exchange.png';
