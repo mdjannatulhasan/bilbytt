@@ -1,16 +1,16 @@
-import { ChevronDownIcon, SearchIcon } from '@chakra-ui/icons';
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Badge, Box, Button, Checkbox, Flex, Grid, GridItem, Heading, HStack, Image, Input, InputGroup, InputLeftElement, Menu, MenuButton, MenuItem, MenuList, Stack, Text, useDisclosure, VStack } from '@chakra-ui/react';
+import { ChevronDownIcon } from '@chakra-ui/icons';
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Flex, Grid, GridItem, Menu, MenuButton, MenuItem, MenuList, useDisclosure } from '@chakra-ui/react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import React, { useState } from 'react';
-import CustomCheckbox from '../../components/organisms/listings/CustomCheckbox';
-import FavouriteIcon from '../../components/atoms/FavouriteIcon';
 import ModalNew from '../../components/organisms/listings/ModalNew';
+import CheckboxList from '../../components/organisms/listings/CheckboxList';
+import Card from '../../components/organisms/listings/Card';
+import Pagination from '../../components/organisms/listings/Pagination';
 
 const Listing = () => {
     const [page, setPage] = useState(1)
     const { isOpen, onOpen, onClose } = useDisclosure();
-    // const data1 = { tile: "Title 1", body: "New Text" };
     const [dataTemp, setData] = useState({});
     const modalTrigger = (data) => {
         setData(data);
@@ -25,7 +25,7 @@ const Listing = () => {
         return axios.get('../db.json')
     }
     );
-    if (isLoading2 && carBrandLoading) {
+    if (isLoading2 || carBrandLoading) {
         return <h2>Loading</h2>
     }
     return (
@@ -55,22 +55,7 @@ const Listing = () => {
                                 </AccordionButton>
                             </h2>
                             <AccordionPanel pb={4}>
-                                <InputGroup>
-                                    <InputLeftElement
-                                        pointerEvents='none'
-                                        children={<SearchIcon color='gray.400' />}
-                                    />
-                                    <Input type='tel' placeholder='Search in car' />
-                                </InputGroup>
-                                <Stack spacing={1} mt={3}>
-                                    <Heading as={'h4'} fontSize={18}>Brands</Heading>
-                                    {
-                                        carBrandNames?.data?.brandList.map((brand) =>
-                                            <CustomCheckbox textInput={brand.brand} models={brand?.models} />
-                                        )
-                                    }
-
-                                </Stack>
+                                <CheckboxList carBrandNames={carBrandNames}></CheckboxList>
                             </AccordionPanel>
                         </AccordionItem>
                     </Accordion>
@@ -79,94 +64,19 @@ const Listing = () => {
                     <Grid templateColumns={{ lg: "repeat(2, 1fr)" }} gap={4}>
                         {
                             dataCar?.data.map((data) =>
-                                <GridItem bg="#ffffff" position='relative' borderRadius={5} overflow="inherit">
-                                    {data.recommended && <p class="ribbon">
-                                        <Box as="span" className="text" fontSize={14}><strong class="bold">Recommended</strong></Box>
-                                    </p>}
-                                    <FavouriteIcon />
-                                    <Box as={Flex} colSpan={2} gap={3} flexDirection={{ sm: "column", lg: 'row' }} justifyContent={{ lg: "flex-end" }} onClick={() => modalTrigger(data)} cursor="pointer">
-                                        <Image objectFit="cover" borderTopRadius={5} boxSize="100%" height="200px" src='https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGNhcnN8ZW58MHx8MHx8&w=1000&q=80' />
-                                    </Box>
-                                    <Box fontWeight={500} px={3} py={2} mt={2} onClick={() => modalTrigger(data)} cursor="pointer" >
-                                        <VStack spacing={1} align="flex-start">
-                                            <Badge fontSize={11}>{data?.location?.zip} {data?.location?.state}</Badge>
-                                            <Text textTransform="capitalize">{data.title}</Text>
-                                        </VStack>
-                                        <HStack justify="space-between" mt={2}>
-                                            <Text><i class="far fa-calendar-alt"></i> {data?.year}</Text>
-                                            <Text><i class="fas fa-road"></i> {data?.totalTraveled}</Text>
-                                            <Text><i class="fas fa-dollar-sign"></i> {data?.price}</Text>
-                                        </HStack>
-                                    </Box>
-
-                                </GridItem>
+                                <Card data={data} modalTrigger={modalTrigger}></Card>
                             )
                         }
                     </Grid>
                 </GridItem>
                 <GridItem colSpan={3} display={{ sm: 'none', lg: 'block' }}>
-                    <InputGroup>
-                        <InputLeftElement
-                            pointerEvents='none'
-                            children={<SearchIcon color='gray.400' />}
-                        />
-                        <Input type='tel' placeholder='Search in car' />
-                    </InputGroup>
-                    <Stack spacing={1} mt={3}>
-                        <Heading as={'h4'} fontSize={18}>Brands</Heading>
-                        {
-                            carBrandNames?.data?.brandList.map((brand) =>
-                                <CustomCheckbox textInput={brand.brand} models={brand?.models} />
-                            )
-                        }
-
-                    </Stack>
-
+                    <CheckboxList carBrandNames={carBrandNames}></CheckboxList>
                 </GridItem>
-
             </Grid>
-            <HStack gap={4} m={2}>
-                <Button
-                    onClick={() => setPage(page => Math.max(page - 1, 0))}
-                    disabled={page === 1}
-
-                >
-                    Previous Page
-                </Button>
-                <span>Current Page: {page}</span>
-                <Button
-                    onClick={() => {
-                        if (!isPreviousData && dataCar?.data.length) {
-                            setPage(page => page + 1)
-                        }
-                    }}
-                    disabled={page === dataCar?.data.length}
-                >
-                    Next Page
-                </Button>
-                {isFetching ? <span> Loading...</span> : null}
-            </HStack>
+            <Pagination setPage={setPage} page={page} isPreviousData={isPreviousData} dataCar={dataCar} isFetching={isFetching}></Pagination>
             <ModalNew onOpen={onOpen} data={dataTemp} onClose={onClose} isOpen={isOpen}></ModalNew>
         </Box>
     );
 };
 
 export default Listing;
-
-/*
-/components
-    /common
-    /listings
-        /molecules
-        /organisms
-    /profile
-        /molecules
-        /organisms
-/hooks
-/pages
-    /dashboard/listing.ts
-    index.ts
-/utils
-App.js
-index.js
-yee-zbnh-csp */

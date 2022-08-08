@@ -1,12 +1,4 @@
-import {
-    Box,
-    Flex,
-    Show,
-    Link,
-    Badge,
-    Image,
-    Text
-} from '@chakra-ui/react';
+import { Box, Flex, Show, Link, Badge, Image, Text } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from './../../../../images/logo1.png';
