@@ -1,7 +1,8 @@
 import { Box, Container, Image, Grid, GridItem, Heading, Text, VStack, Button } from '@chakra-ui/react';
 import React from 'react';
+import TitleTextButton from '../../molecules/Landing/TitleTextButton';
 
-const ThirdSection = () => {
+const SectionWithLeftSIdeImage = () => {
     return (
         <Box as="section" py={16}>
             <Container maxW='container.xl'>
@@ -12,13 +13,11 @@ const ThirdSection = () => {
                         </Box>
                     </GridItem>
                     <GridItem pl={{ lg: 6 }}>
-                        <VStack spacing={5} alignItems='flex-start'>
-                            <Heading fontSize={42}>5 tips til deg som drømmer om båt!</Heading>
-                            <Text fontSize={20}>
-                                Båtsesongen nærmer seg og mange drømmer om å investere i egen båt, men hva slags båt er egentlig rett for deg? Og hva skal du se etter? Vi har spurt daglig leder i Ferd Båt, Rune Westad om noen enkle tips.
-                            </Text>
-                            <Button variant='outline' borderColor='brand.500' height='auto' borderRadius={500} py={3} px={8} fontSize={18} color='brand.500' _hover={{ color: 'white', bg: 'brand.500' }}>Se andre lån</Button>
-                        </VStack>
+                        <TitleTextButton
+                            title='5 tips til deg som drømmer om båt!'
+                            text='Båtsesongen nærmer seg og mange drømmer om å investere i egen båt, men hva slags båt er egentlig rett for deg? Og hva skal du se etter? Vi har spurt daglig leder i Ferd Båt, Rune Westad om noen enkle tips.'
+                            button={{ text: 'Se andre lån', url: '' }}
+                        ></TitleTextButton>
                     </GridItem>
                 </Grid>
             </Container>
@@ -26,4 +25,4 @@ const ThirdSection = () => {
     );
 };
 
-export default ThirdSection;
+export default SectionWithLeftSIdeImage;
