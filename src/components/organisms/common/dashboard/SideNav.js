@@ -5,7 +5,7 @@ import SideNavLink from '../../../molecules/common/SideNavLink';
 
 const SideNav = () => {
     return (
-        <Box w='100%' p={2}>
+        <Box w='100%' maxW='275px' minH='100vh' p={3} borderRight='1px solid #e5e7eb' position='fixed' left={0}>
             <Flex direction="column" gap="2">
                 {/* <SideNavLink></SideNavLink> */}
                 <Link as={NavLink} to="" _hover={{ textDecoration: 'none' }} fontWeight="500" color="blackAlpha.700" _activeLink={{ backgroundColor: 'brand.100', color: 'brand.500' }} py={3} px={4} borderRadius="4px" end>

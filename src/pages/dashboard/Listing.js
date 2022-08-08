@@ -42,7 +42,7 @@ const Listing = () => {
                     </Menu>
                 </Box>
             </Flex>
-            <Grid templateColumns={{ sm: 'repeat(1, 1fr)', lg: "repeat(10, 1fr)" }} gap={6} mt={4}>
+            <Grid templateColumns={{ sm: 'repeat(1, 1fr)', lg: "repeat(10, 1fr)" }} gap={6} mt={2}>
                 <GridItem display={{ sm: 'flex', lg: 'none' }} width='100%'>
                     <Accordion allowToggle width='100%'>
                         <AccordionItem>
