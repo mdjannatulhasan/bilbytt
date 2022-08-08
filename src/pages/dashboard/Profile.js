@@ -1,5 +1,5 @@
-import { PhoneIcon } from '@chakra-ui/icons';
-import { Box, Grid, GridItem, Heading, Input, InputGroup, InputLeftElement } from '@chakra-ui/react';
+import { AttachmentIcon, PhoneIcon } from '@chakra-ui/icons';
+import { Box, Button, Flex, Grid, GridItem, Heading, HStack, Image, Input, InputGroup, InputLeftElement, Text, VStack } from '@chakra-ui/react';
 import React from 'react';
 import Select from 'react-select';
 
@@ -9,16 +9,17 @@ const Profile = () => {
         { value: "bmw", label: "BMW" },
         { value: "dacia", label: "Dacia" },
         { value: "dacia", label: "Dacia" },
-    ]
+    ];
+
     const gender = [
         { value: "male", label: "Male" },
         { value: "female", label: "Female" },
         { value: "others", label: "Others" },
-    ]
+    ];
     return (
         <Box>
-            <Grid templateColumns={{ lg: "repeat(9,1fr)" }} gap={2}>
-                <GridItem colSpan={6} bg="white" p={5}>
+            <Grid templateColumns={{ lg: "repeat(9,1fr)" }} gap={4}>
+                <GridItem colSpan={6} bg="white" p={5} borderRadius={5}>
                     <Box>
                         <Heading fontSize={18} fontWeight={600} color='#262b40'>
                             General Information
@@ -62,7 +63,7 @@ const Profile = () => {
                             </GridItem>
                         </Grid>
                     </Box>
-                    <Box mt={5}>
+                    <Box mt={7}>
                         <Heading fontSize={18} fontWeight={600} color='#262b40'>
                             Address
                         </Heading>
@@ -105,7 +106,7 @@ const Profile = () => {
                             </GridItem>
                         </Grid>
                     </Box>
-                    <Box mt={5}>
+                    <Box mt={7}>
                         <Heading fontSize={18} fontWeight={600} color='#262b40'>
                             Brands
                         </Heading>
@@ -115,9 +116,49 @@ const Profile = () => {
                             </GridItem>
                         </Grid>
                     </Box>
+                    <Button bg="brand.400" mt={4}>Save All</Button>
                 </GridItem>
-                <GridItem colSpan={3} bg="white">
-                    Profile
+                <GridItem colSpan={3} borderRadius={5}>
+                    <Box bg="white" pb={8} mb={4}>
+                        <Box position="relative">
+                            <Image borderTopRadius={5} height="180px" boxSize="100%" objectFit="cover" src='https://png.pngtree.com/thumb_back/fw800/background/20190221/ourmid/pngtree-shading-background-abstract-colorful-background-colorful-art-image_22644.jpg'>
+                            </Image>
+                            <Box position="absolute" top="95px" left="50%" transform="translateX(-50%)">
+                                <Image boxSize="150px" objectFit="cover" borderRadius={600} border="5px solid" borderColor="gray.200" src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg'>
+                                </Image>
+                            </Box>
+                        </Box>
+                        <VStack mt={20} textAlign="center">
+                            <Text fontWeight={500} fontSize="24px">Admin</Text>
+                            <Text fontSize="18px" fontWeight={500}>test@netmark.no</Text>
+                            <Text>Bergen, Norway</Text>
+                            <HStack fontSize={22} spacing={3} pt={3}>
+                                <i class="fab fa-google"></i>
+                                <i class="fab fa-facebook"></i>
+                                <i class="fab fa-twitter"></i>
+                            </HStack>
+                        </VStack>
+                    </Box>
+                    <Box bg="white" p={4}>
+                        <Flex w="100%" align="center" gap={3}>
+                            <Box minW="80px">
+                                <Image boxSize="80px" objectFit="cover" borderRadius={4} src='https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?cs=srgb&dl=pexels-pixabay-220453.jpg&fm=jpg'>
+                                </Image>
+                            </Box>
+                            <InputGroup>
+                                <Input display='none' type='file' placeholder='Zip' id='fileUpload' />
+                                <label for="fileUpload">
+                                    <Flex _hover={{ cursor: "pointer" }} gap={3} align="center">
+                                        <AttachmentIcon fontSize={40} />
+                                        <Box>
+                                            <Text fontWeight={500} mb={1}>Choose Image</Text>
+                                            <Text fontSize={14}>JPG, GIF or PNG. Max size of 800K</Text>
+                                        </Box>
+                                    </Flex>
+                                </label>
+                            </InputGroup>
+                        </Flex>
+                    </Box>
                 </GridItem>
             </Grid>
         </Box>

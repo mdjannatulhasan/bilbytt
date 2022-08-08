@@ -1,5 +1,5 @@
 import { LockIcon } from '@chakra-ui/icons';
-import { Box, Button, Flex, Grid, GridItem, HStack, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs, Text, VStack, Link } from '@chakra-ui/react';
+import { Box, Button, Flex, Grid, GridItem, HStack, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Tab, TabList, TabPanel, TabPanels, Tabs, Text, Link, Badge } from '@chakra-ui/react';
 import React from 'react';
 import { Link as reactLink } from 'react-router-dom';
 
@@ -14,7 +14,7 @@ const ModalNew = (props) => {
                     <Box fontSize={13} fontWeight="500" color="gray.500">
                         #{data.id}
                     </Box>
-                    {data.title}
+                    {data.title} {data?.recommended && <Badge bg="#FFD629">Recommended</Badge>}
                     <Flex justify="space-between" fontSize={16} fontWeight="500" color="gray.500">
                         <Box as="span">{data?.location?.zip} {data?.location?.city}, {data?.location?.state} </Box>
                         <Box as="span" ml={2}>{data.createdAt}</Box>
