@@ -5,22 +5,18 @@ import {
     Hide,
     Menu,
     MenuButton,
-    MenuItem,
-    MenuList,
     Show,
     Link,
     InputGroup,
     InputLeftElement,
     Input,
     Image,
-    Text,
     Container
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import HorizontalLogo from '../../../molecules/dashboard/HorizontalLogo';
 import HeaderMenuListItems from '../../../molecules/Landing/HeaderMenuListItems';
-import logo from './../../../../images/logo1.png';
 
 const Header = () => {
     const dashboardMenuItemsList = [

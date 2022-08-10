@@ -13,6 +13,8 @@ import MyMessages from './pages/dashboard/message/Index';
 import SingleChatbox from './pages/dashboard/message/SingleChatbox';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Home from './pages/Frontend/Home/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
 function App() {
     const queryClient = new QueryClient();
     return (
@@ -20,6 +22,8 @@ function App() {
             <ChakraProvider theme={theme}>
                 <Routes>
                     <Route path='/' element={<Home></Home>}></Route>
+                    <Route path='/login' element={<Login></Login>}></Route>
+                    <Route path='/signup' element={<SignUp></SignUp>}></Route>
 
                     <Route path='/dashboard' element={<Dashboard></Dashboard>}>
                         <Route path='/dashboard/' element={<Profile></Profile>}></Route>

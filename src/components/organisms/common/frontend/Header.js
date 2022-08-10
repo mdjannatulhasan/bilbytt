@@ -42,7 +42,7 @@ const Header = ({ bgColor }) => {
 
                         <Link as={NavLink} to="/"><Image boxSize="80px" height="auto" src={logo} /></Link>
                         <HStack spacing={5}>
-                            <HeaderNavLinkItem name='Login' url='/dashboard' icon='fa fa-user' />
+                            <HeaderNavLinkItem name='Login' url='/login' icon='fa fa-user' />
                             <Hide below='md'>
                                 <Menu>
                                     <MenuButton
