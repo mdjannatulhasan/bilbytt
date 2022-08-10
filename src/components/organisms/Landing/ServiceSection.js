@@ -15,8 +15,8 @@ const ServiceSection = () => {
         <Box as="section" py={16}>
             <Container maxW='container.xl'>
                 <Grid templateColumns={{ lg: 'repeat(3,1fr)' }} gap={6}>
-                    {services.map(({ imgSrc, title, text }) =>
-                        <GridItem textAlign='center'>
+                    {services.map(({ imgSrc, title, text }, index) =>
+                        <GridItem key={index} textAlign='center'>
                             <Card imgSrc={imgSrc}
                                 title={title}
                                 text={text}

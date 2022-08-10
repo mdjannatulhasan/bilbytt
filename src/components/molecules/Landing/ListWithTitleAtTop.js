@@ -11,8 +11,8 @@ const ListWithTitleAtTop = ({ title, subTitle, list }) => {
             </Box>
 
             <VStack spacing={4} alignItems='flex-start'>
-                {list.map(item =>
-                    <ListItemWithIcon color='brand.200' text={item}></ListItemWithIcon>
+                {list.map((item, index) =>
+                    <ListItemWithIcon key={index} color='brand.200' text={item}></ListItemWithIcon>
                 )}
             </VStack>
         </VStack>

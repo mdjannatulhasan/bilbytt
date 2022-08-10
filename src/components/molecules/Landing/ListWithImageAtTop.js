@@ -10,8 +10,8 @@ const ListWithImageAtTop = ({ subTitle, list, imgSrc }) => {
 
             </Text>
             <VStack spacing={4} alignItems='flex-start' fontSize={17} fontWeight={600}>
-                {list.map(item =>
-                    <ListItemWithIcon color='brand.500' text={item}></ListItemWithIcon>
+                {list.map((item, index) =>
+                    <ListItemWithIcon key={index} color='brand.500' text={item}></ListItemWithIcon>
                 )}
             </VStack>
         </VStack>

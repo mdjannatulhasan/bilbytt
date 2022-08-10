@@ -10,11 +10,11 @@ const Index = () => {
         <>
             <DashboardHeader></DashboardHeader>
             <Container maxW="container.custom" mt={2} height="100%" px={{ lg: 0 }} pb={{ sm: '70px', lg: 0 }}>
-                <Flex gap={2} height="100%" mt='83px'>
-                    <Box bg='#ffffff' width='100%' maxW='275px' display={{ base: 'none', lg: 'flex' }}>
+                <Flex gap={2} height="100%" mt='83px' align='flex-start'>
+                    <Box bg='#ffffff' width='100%' height='88vh' maxW='275px' display={{ base: 'none', lg: 'flex' }}>
                         <SideNav></SideNav>
                     </Box>
-                    <Box mt={2} mr={2}>
+                    <Box mt={4} ml={2} mr={3}>
                         <Outlet />
                     </Box>
                 </Flex>

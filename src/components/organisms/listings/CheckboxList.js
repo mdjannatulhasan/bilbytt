@@ -16,8 +16,8 @@ const CheckboxList = ({ carBrandNames }) => {
             <Stack spacing={1} mt={3}>
                 <Heading as={'h4'} fontSize={18}>Brands</Heading>
                 {
-                    carBrandNames?.data?.brandList.map((brand) =>
-                        <CustomCheckbox textInput={brand.brand} models={brand?.models} />
+                    carBrandNames?.data?.brandList.map((brand, index) =>
+                        <CustomCheckbox key={index} textInput={brand.brand} models={brand?.models} />
                     )
                 }
 

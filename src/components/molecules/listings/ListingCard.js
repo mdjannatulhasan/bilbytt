@@ -5,8 +5,8 @@ import FavouriteIcon from '../../atoms/FavouriteIcon';
 const Card = ({ data, modalTrigger }) => {
     return (
         <GridItem bg="#ffffff" position='relative' borderRadius={5} overflow="inherit">
-            {data.recommended && <p class="ribbon">
-                <Box as="span" className="text" fontSize={14}><strong class="bold">Recommended</strong></Box>
+            {data.recommended && <p className="ribbon">
+                <Box as="span" className="text" fontSize={14}><strong className="bold">Recommended</strong></Box>
             </p>}
             <FavouriteIcon />
             <Box as={Flex} colSpan={2} gap={3} flexDirection={{ sm: "column", lg: 'row' }} justifyContent={{ lg: "flex-end" }} onClick={() => modalTrigger(data)} cursor="pointer">
@@ -18,9 +18,9 @@ const Card = ({ data, modalTrigger }) => {
                     <Text textTransform="capitalize">{data.title}</Text>
                 </VStack>
                 <HStack justify="space-between" mt={2}>
-                    <Text><i class="far fa-calendar-alt"></i> {data?.year}</Text>
-                    <Text><i class="fas fa-road"></i> {data?.totalTraveled}</Text>
-                    <Text><i class="fas fa-dollar-sign"></i> {data?.price}</Text>
+                    <Text><i className="far fa-calendar-alt"></i> {data?.year}</Text>
+                    <Text><i className="fas fa-road"></i> {data?.totalTraveled}</Text>
+                    <Text><i className="fas fa-dollar-sign"></i> {data?.price}</Text>
                 </HStack>
             </Box>
 

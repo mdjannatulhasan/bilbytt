@@ -29,7 +29,7 @@ const Profile = () => {
                                 <InputGroup>
                                     <InputLeftElement color="gray.400"
                                         pointerEvents='none'
-                                        children={<i class="fas fa-user"></i>}
+                                        children={<i className="fas fa-user"></i>}
                                     />
                                     <Input type='tel' placeholder='Full Name' />
                                 </InputGroup>
@@ -38,7 +38,7 @@ const Profile = () => {
                                 <InputGroup>
                                     <InputLeftElement color="gray.400"
                                         pointerEvents='none'
-                                        children={<i class="fas fa-envelope"></i>}
+                                        children={<i className="fas fa-envelope"></i>}
                                     />
                                     <Input type='tel' placeholder='User Email' />
                                 </InputGroup>
@@ -72,7 +72,7 @@ const Profile = () => {
                                 <InputGroup>
                                     <InputLeftElement color="gray.400"
                                         pointerEvents='none'
-                                        children={<i class="fas fa-home"></i>}
+                                        children={<i className="fas fa-home"></i>}
                                     />
                                     <Input type='tel' placeholder='House/Street No' />
                                 </InputGroup>
@@ -81,7 +81,7 @@ const Profile = () => {
                                 <InputGroup>
                                     <InputLeftElement color="gray.400"
                                         pointerEvents='none'
-                                        children={<i class="fas fa-city"></i>}
+                                        children={<i className="fas fa-city"></i>}
                                     />
                                     <Input type='tel' placeholder='City' />
                                 </InputGroup>
@@ -90,7 +90,7 @@ const Profile = () => {
                                 <InputGroup>
                                     <InputLeftElement color="gray.400"
                                         pointerEvents='none'
-                                        children={<i class="fas fa-map"></i>}
+                                        children={<i className="fas fa-map"></i>}
                                     />
                                     <Input type='tel' placeholder='State' />
                                 </InputGroup>
@@ -99,7 +99,7 @@ const Profile = () => {
                                 <InputGroup>
                                     <InputLeftElement color="gray.400"
                                         pointerEvents='none'
-                                        children={<i class="fas fa-map-marker-alt"></i>}
+                                        children={<i className="fas fa-map-marker-alt"></i>}
                                     />
                                     <Input type='tel' placeholder='Zip' />
                                 </InputGroup>
@@ -133,9 +133,9 @@ const Profile = () => {
                             <Text fontSize="18px" fontWeight={500}>test@netmark.no</Text>
                             <Text>Bergen, Norway</Text>
                             <HStack fontSize={22} spacing={3} pt={3}>
-                                <i class="fab fa-google"></i>
-                                <i class="fab fa-facebook"></i>
-                                <i class="fab fa-twitter"></i>
+                                <i className="fab fa-google"></i>
+                                <i className="fab fa-facebook"></i>
+                                <i className="fab fa-twitter"></i>
                             </HStack>
                         </VStack>
                     </Box>
@@ -147,7 +147,7 @@ const Profile = () => {
                             </Box>
                             <InputGroup>
                                 <Input display='none' type='file' placeholder='Zip' id='fileUpload' />
-                                <label for="fileUpload">
+                                <label htmlFor="fileUpload">
                                     <Flex _hover={{ cursor: "pointer" }} gap={3} align="center">
                                         <AttachmentIcon fontSize={40} />
                                         <Box>

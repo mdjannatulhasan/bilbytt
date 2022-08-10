@@ -1,5 +1,5 @@
 import { AttachmentIcon } from '@chakra-ui/icons';
-import { Box, Button, ButtonGroup, Flex, Heading, Image, Link, Text, Textarea, VStack } from '@chakra-ui/react';
+import { Box, Button, ButtonGroup, Flex, Heading, Image, Link, Text, Textarea } from '@chakra-ui/react';
 import React from 'react';
 import { Link as ReactLink, useParams } from 'react-router-dom';
 

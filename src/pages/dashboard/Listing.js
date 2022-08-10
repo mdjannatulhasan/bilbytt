@@ -49,7 +49,7 @@ const Listing = () => {
                             <h2>
                                 <AccordionButton>
                                     <Box flex='1' textAlign='left'>
-                                        <i class="fas fa-sliders-h"></i> <Box as='span' ml={2}>Filters</Box>
+                                        <i className="fas fa-sliders-h"></i> <Box as='span' ml={2}>Filters</Box>
                                     </Box>
                                     <AccordionIcon />
                                 </AccordionButton>
@@ -63,8 +63,8 @@ const Listing = () => {
                 <GridItem colSpan={{ lg: 7 }}>
                     <Grid templateColumns={{ lg: "repeat(2, 1fr)" }} gap={4}>
                         {
-                            dataCar?.data.map((data) =>
-                                <Card data={data} modalTrigger={modalTrigger}></Card>
+                            dataCar?.data.map((data, index) =>
+                                <Card key={index} data={data} modalTrigger={modalTrigger}></Card>
                             )
                         }
                     </Grid>
