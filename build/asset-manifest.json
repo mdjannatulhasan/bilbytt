@@ -1,22 +1,24 @@
 {
   "files": {
     "main.css": "/static/css/main.ed25df16.css",
-    "main.js": "/static/js/main.bd788cb2.js",
+    "main.js": "/static/js/main.d42ef020.js",
     "static/js/377.8d67dc17.chunk.js": "/static/js/377.8d67dc17.chunk.js",
     "static/media/hero-img.png": "/static/media/hero-img.5a189b715d4bed20d98c.png",
+    "static/media/dealership-sales.jpeg": "/static/media/dealership-sales.75ff9df8c3c0750733d0.jpeg",
     "static/media/logoL.png": "/static/media/logoL.f631e8655c2a21747e26.png",
     "static/media/logo.png": "/static/media/logo.fb7ee1797285a45d00d2.png",
     "static/media/select-offer.png": "/static/media/select-offer.2beb3e5a5c1e2503c536.png",
     "static/media/registration.png": "/static/media/registration.636abc26272a81bd747f.png",
     "static/media/logo1.png": "/static/media/logo1.3c31e6217c90af1d9ad9.png",
     "static/media/quote.svg": "/static/media/quote.d4898049f6b4ab7bfe19df23abf63734.svg",
+    "static/media/ic_google logo.svg": "/static/media/ic_google logo.9cbac1bb1684601fdbf4e56da53fde1a.svg",
     "index.html": "/index.html",
     "main.ed25df16.css.map": "/static/css/main.ed25df16.css.map",
-    "main.bd788cb2.js.map": "/static/js/main.bd788cb2.js.map",
+    "main.d42ef020.js.map": "/static/js/main.d42ef020.js.map",
     "377.8d67dc17.chunk.js.map": "/static/js/377.8d67dc17.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ed25df16.css",
-    "static/js/main.bd788cb2.js"
+    "static/js/main.d42ef020.js"
   ]
 }
