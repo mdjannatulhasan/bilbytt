@@ -1,8 +1,6 @@
 import { BellIcon, ChevronDownIcon, HamburgerIcon, SearchIcon } from '@chakra-ui/icons';
 import {
     Box,
-    Button,
-    ChakraProvider,
     Flex,
     Hide,
     Menu,
@@ -20,9 +18,15 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import HorizontalLogo from '../../../molecules/dashboard/HorizontalLogo';
+import HeaderMenuListItems from '../../../molecules/Landing/HeaderMenuListItems';
 import logo from './../../../../images/logo1.png';
 
 const Header = () => {
+    const dashboardMenuItemsList = [
+        { url: '/dashboard', name: 'Profile' },
+        { url: '/dashboard', name: 'My Message' }
+    ]
     return (
         <Container maxW='container.custom' bg='#ffffff' w="100%" position='fixed' top='0' zIndex={60} borderBottom='1px solid #e5e7eb'>
             <Flex align="center" p={3} w="100%">
@@ -30,11 +34,7 @@ const Header = () => {
                     <Hide below='md'>
                         <Flex align='center'>
                             <Link as={NavLink} to="/" mr={8} display="block" _hover={{ textDecoration: "none" }}>
-                                <Flex align="center" justify="center" fontSize={22} className="logo" fontWeight={700} w="100%">
-                                    <Image boxSize="70px" height="auto" src={logo} />
-                                    <Text color="#ABCDF7" ml={2}>bil</Text>
-                                    <Text color="#4682E0">bytt</Text>
-                                </Flex>
+                                <HorizontalLogo />
                             </Link>
                             <InputGroup ml={3} borderColor="transparent" display='inline-block'>
                                 <InputLeftElement
@@ -47,11 +47,7 @@ const Header = () => {
                     </Hide>
                     <Show breakpoint='(max-width: 768px)'>
                         <Link as={NavLink} to="/" display="block" _hover={{ textDecoration: "none" }}>
-                            <Flex align="center" justify="center" fontSize={22} className="logo" fontWeight={700} w="100%">
-                                <Image boxSize="60px" height="auto" src={logo} />
-                                <Text color="#ABCDF7" ml={2}>bil</Text>
-                                <Text color="#4682E0">bytt</Text>
-                            </Flex>
+                            <HorizontalLogo />
                         </Link>
                     </Show>
                     <Flex w='100%' justify="flex-end" align="center" gap={{ sm: 5, lg: 8 }}>
@@ -62,10 +58,7 @@ const Header = () => {
                                     <Box as='span' px={2} py={1} bg="gray.300" fontSize={13} fontWeight="700">12</Box>
                                 </Flex>
                             </MenuButton>
-                            <MenuList>
-                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="gray.600" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Notification 1</MenuItem>
-                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="gray.600" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Notification 2</MenuItem>
-                            </MenuList>
+                            <HeaderMenuListItems menuList={dashboardMenuItemsList} />
                         </Menu>
                         <Menu>
                             <MenuButton fontWeight={600}>
@@ -75,9 +68,7 @@ const Header = () => {
 
                                 </Flex>
                             </MenuButton>
-                            <MenuList>
-                                <MenuItem as={NavLink} to="/" _hover={{ textDecoration: 'none' }} fontWeight="500" color="gray.600" _activeLink={{ backgroundColor: '#5890ED', color: '#ffffff' }} py={2} px={4} end>Download</MenuItem>
-                            </MenuList>
+                            <HeaderMenuListItems menuList={dashboardMenuItemsList} />
                         </Menu>
                     </Flex>
                 </Flex>
